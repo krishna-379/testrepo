@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}Filelist{% endblock%}</title>
+</head>
+<body>
+{% block content %}
+    <div class="container" align="center">
+        <h1 style="color:red">File List..!!</h1><br>
+        <table class="table table-bordered bg-primary ">
+            <thead class="text-center">
+            <th>ID</th>
+            <th>View</th>
+            <th>Action</th>
+            </thead>
+            {% for files in filelist %}
+            <tbody class="text-center">
+            <td>{{files.id}}</td>
+            <td><img src="{{ files.file.url }}" height="50px" width="50px"></td>
+            <td><a href="{% url 'delete' files.id %}" class=" btn btn-danger">Delete</a></td>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+</body>
+</html>l>

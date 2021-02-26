@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doc_Convert</title>
+</head>
+<body>
+{% block content %}
+<br>
+<style>
+body{
+background-color: lightblue;
+}
+</style>
+<div class="container" align="center">
+        <h1 style="color:red">Upload Your Document..!!</h1><hr>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" style="background-color:green;color:white">Convert</button>
+    </form>
+    </div>
+{% endblock %}
+</body>
+</html>
